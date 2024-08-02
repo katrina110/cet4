@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>PUP HYMN</title>
+<style>
+    body{
+
+    background-image:url("pup background.png");
+    background-size: 100%;
+    background-repeat: repeat-x;
+    }
+</style>
+</head>
+<body>
+    <div class="text">
+        <h1 align="center">Polytechnic University of the Philippines (PUP) Hymn</h1>
+        
+        <h3 align="center"><p style="color:white"><ins>Play the audio</ins></h3>
+        </p>
+      </div>
+    </div>
+
+    <p align="center">
+     <audio controls autoplay>
+        <source src="Imno ng PUP (The PUP Hymn).mp3" type="audio/mpeg">
+     </audio>
+    </p>
+
+    <marquee id="marquee" behavior="scroll" direction="up" height="65%" scrollamount="2" loop="3" scrolldelay="200">
+        <h2>
+            <pre> <p style="color:white">
+                    Sintang Paaralan
+                    Tanglaw ka ng bayan
+                    Pandayan ng isip ng kabataan
+                    Kami ay dumating nang salat sa yaman</p>
+            <p style="color:white">
+                    Hanap ng dunong ay iyong alay
+                    Ang layunin mong makatao
+                    Dinarangal ang Pilipino
+                    Ang iyong aral, diwa, adikahing taglay</p>
+            <p style="color:white">
+                    PUP, aming gabay 
+                    Paaralang dakila
+                    PUP, pinagpala
+                    Gagamitin ang karunungan</p>
+            <p style="color:white">
+                    Mula sa iyo, para sa bayan 
+                    Ang iyong aral, diwa, adhikahing taglay
+                    PUP, aming gabay
+                    Paaralang dakila
+                    PUP, pinagpala</p>
+        </h2>
+            </pre>
+    </marquee>
+<script>
+    
+    var marquee = document.getElementById("marquee");
+    var audio = document.getElementsByTagName("audio")[0];
+
+    audio.addEventListener("play", function() {
+        marquee.start();
+    });
+
+    audio.addEventListener("pause", function() {
+        marquee.stop();
+    });
+
+    audio.addEventListener("ended", function() {
+        marquee.stop();
+    });
+
+        function syncMarquee() {
+
+            const currentTime = audio.currentTime;
+            const scrollSpeed = 01; // in pixels per second
+            const pixelsToScroll = currentTime * scrollSpeed;
+            marquee.scrollTop = pixelsToScroll;
+        }
+
+        setInterval(syncMarquee, 100); // call syncMarquee every 100 milliseconds
+        window.onload = function(){marquee.stop()};
+</script>
+    <h2 style="color:  whitesmoke;">Batin, Katrina Ricci C., BSCOE 2-5</h2>
+</body>
+</html>
